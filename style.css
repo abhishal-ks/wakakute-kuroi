@@ -1,0 +1,177 @@
+/* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section {
+    padding: 120px 10%;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 25px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+nav h1 {
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background: gold;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #111 0%, #000 70%);
+}
+
+.hero h2 {
+    font-size: 5rem;
+    letter-spacing: 8px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.5s ease forwards;
+}
+
+.hero span {
+    color: gold;
+}
+
+.hero p {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 1s;
+}
+
+/* ===== CONTENT ===== */
+.content h3 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+.content p {
+    max-width: 700px;
+    line-height: 1.8;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+/* ===== CARD LUXURY ===== */
+.cards {
+    display: flex;
+    gap: 50px;
+    margin-top: 80px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    padding: 50px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    transition: 0.5s ease;
+}
+
+.card:hover {
+    border-color: gold;
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #050505;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===== PAGE TRANSITION ===== */
+body {
+    animation: pageFade 0.8s ease;
+}
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
